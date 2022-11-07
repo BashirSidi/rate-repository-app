@@ -1,9 +1,10 @@
 import {
   View,
-  StyleSheet ,
+  StyleSheet,
   Image,
 } from 'react-native';
 import Text from './Text';
+import Rates from './Rates';
 
 import theme from '../theme';
 
@@ -33,6 +34,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
   },
+  description: {
+    fontSize: 15,
+    width: 298,
+    marginTop: 10,
+  },
   language: {
     fontSize: 20,
     backgroundColor: theme.colors.primary,
@@ -40,20 +46,17 @@ const styles = StyleSheet.create({
     width: 'max-content',
     padding: 6,
     borderRadius: 4,
+    marginTop: 10,
   },
   rates: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'row', 
+    justifyContent: 'space-around',
+    marginTop: 10,
   },
-  rate: {
-    margin: 0,
-  }
-})
+});
 
 const RepositoryItem = ({item}) => {
-    const kFormatter = (num) => {
-      return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
-    }
     return (
       <View style={styles.container}>
         <View style={styles.repoGeneralInfo}>
@@ -65,31 +68,16 @@ const RepositoryItem = ({item}) => {
           </View>
           <View style={styles.repoRates}>
           <Text style={styles.txtFullname}>{item.fullName}</Text>
-          <Text style={{fontSize: 15, width: 298}}>{item.description}</Text>
+          <Text style={styles.description}>{item.description}</Text>
           <View style={styles.language}>{item.language}</View>
           </View>
         </View>
 
         <View style={styles.rates}>
-          <View style={styles.rate}>
-            <Text>{kFormatter(item.stargazersCount)}</Text>
-            <Text>Stars</Text>
-          </View>
-
-          <View style={styles.rate}>
-            <Text>{kFormatter(item.forksCount)}</Text>
-            <Text>Forks</Text>
-          </View>
-
-          <View style={styles.rate}>
-            <Text>{kFormatter(item.reviewCount)}</Text>
-            <Text>Reviews</Text>
-          </View>
-
-          <View style={styles.rate}>
-            <Text>{kFormatter(item.ratingAverage)}</Text>
-            <Text>Rating</Text>
-          </View>
+          <Rates rateValue={item.stargazersCount} name="Stars"/>
+          <Rates rateValue={item.forksCount} name="Forks"/>
+          <Rates rateValue={item.reviewCount} name="Reviews"/>
+          <Rates rateValue={item.ratingAverage} name="Rating"/>
         </View>
       </View>
     )
