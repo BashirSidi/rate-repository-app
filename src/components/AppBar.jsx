@@ -4,6 +4,9 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#24292e',
     height: 40,
@@ -17,9 +20,8 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <Pressable>
-        <Text style={styles.tab}>Repositories</Text>
-      </Pressable>
+      <Text style={styles.tab}>Repositories</Text>
+      <Text style={styles.tab}>Sign in</Text>
     </View>
   );
 };
