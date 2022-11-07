@@ -6,7 +6,6 @@ import {
 import Text from './Text';
 
 import theme from '../theme';
-import { white } from 'synonyms/dictionary';
 
 
 const styles = StyleSheet.create({
@@ -97,4 +96,3 @@ const RepositoryItem = ({item}) => {
   };
 
   export default RepositoryItem;
-

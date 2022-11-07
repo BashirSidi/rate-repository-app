@@ -1875,10 +1875,36 @@
   "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.9.tgz"
   "version" "18.11.9"
 
+"@types/prop-types@*":
+  "integrity" "sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w=="
+  "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
+  "version" "15.7.5"
+
 "@types/q@^1.5.1":
   "integrity" "sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ=="
   "resolved" "https://registry.npmjs.org/@types/q/-/q-1.5.5.tgz"
   "version" "1.5.5"
+
+"@types/react-native@^0.70.6":
+  "integrity" "sha512-ynQ2jj0km9d7dbnyKqVdQ6Nti7VQ8SLTA/KKkkS5+FnvGyvij2AOo1/xnkBR/jnSNXuzrvGVzw2n0VWfppmfKw=="
+  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.70.6.tgz"
+  "version" "0.70.6"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
+  "integrity" "sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.25.tgz"
+  "version" "18.0.25"
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    "csstype" "^3.0.2"
+
+"@types/scheduler@*":
+  "integrity" "sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew=="
+  "resolved" "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
+  "version" "0.16.2"
 
 "@types/source-list-map@*":
   "integrity" "sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA=="
@@ -3843,6 +3869,11 @@
   "version" "4.2.0"
   dependencies:
     "css-tree" "^1.1.2"
+
+"csstype@^3.0.2":
+  "integrity" "sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw=="
+  "resolved" "https://registry.npmjs.org/csstype/-/csstype-3.1.1.tgz"
+  "version" "3.1.1"
 
 "cyclist@^1.0.1":
   "integrity" "sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A=="

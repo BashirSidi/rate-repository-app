@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
 const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
   const textStyle = [
     styles.text,
-    color === 'textSecondary' && styles.colorTextSecondary,
-    color === 'primary' && styles.colorPrimary,
-    fontSize === 'subheading' && styles.fontSizeSubheading,
-    fontWeight === 'bold' && styles.fontWeightBold,
+    color === 'textSecondary' ? styles.colorTextSecondary : null,
+    color === 'primary' ? styles.colorPrimary : null,
+    fontSize === 'subheading' ? styles.fontSizeSubheading : null,
+    fontWeight === 'bold' ? styles.fontWeightBold : null,
     style,
   ];
 
