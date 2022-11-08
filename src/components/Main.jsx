@@ -1,4 +1,9 @@
-import { StyleSheet, View} from 'react-native';
+import { 
+  SafeAreaView,
+  StyleSheet,
+  Platform,
+  StatusBar
+} from 'react-native';
 import {Route, Routes, Navigate} from 'react-router-native';
 
 import RepositoryList from './RepositoryList';
@@ -10,19 +15,20 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
     backgroundColor: '#e1e4e8',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   }
 });
 
 const Main = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <AppBar />
       <Routes>
         <Route path='/signin' element={<SignIn />} exact />
         <Route path='/' element={<RepositoryList />} exact />
         <Route path='*' element={<Navigate to="/" replace />} />
       </Routes>
-    </View>
+    </SafeAreaView>
   );
 };
 
