@@ -4,7 +4,10 @@ import {
   Platform,
   StatusBar
 } from 'react-native';
-import {Route, Routes, Navigate} from 'react-router-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 import RepositoryList from './RepositoryList';
 import SignIn from './SignIn'
@@ -21,14 +24,17 @@ const styles = StyleSheet.create({
 
 const Main = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <AppBar />
-      <Routes>
-        <Route path='/signin' element={<SignIn />} exact />
-        <Route path='/' element={<RepositoryList />} exact />
-        <Route path='*' element={<Navigate to="/" replace />} />
-      </Routes>
-    </SafeAreaView>
+      <NavigationContainer style={styles.container}>
+        <AppBar />
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={RepositoryList}
+            options={{ title: 'Repositories' }}
+          />
+          <Stack.Screen name="Signin" component={SignIn} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 };
 

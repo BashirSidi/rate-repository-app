@@ -1,4 +1,4 @@
-import { View, StyleSheet, Pressable  } from 'react-native';
+import { View, StyleSheet, Pressable, Button  } from 'react-native';
 import Constants from 'expo-constants';
 import Text from './Text';
 
@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    alignItems: 'center',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#24292e',
     height: 40,
