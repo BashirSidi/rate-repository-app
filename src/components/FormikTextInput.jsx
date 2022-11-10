@@ -10,7 +10,11 @@ const styles = StyleSheet.create({
 	errorText: {
 		marginTop: 5,
 		color: theme.colors.danger,
-	}
+	},
+	txtError: {
+		marginHorizontal: 20,
+    marginVertical: 5,
+	},
 });
 
 const FormikTextInput = ({ name, ...props }) => {
@@ -26,7 +30,7 @@ const FormikTextInput = ({ name, ...props }) => {
 				error={showError}
 				{...props}
 			/>
-			{showError && <Text style={styles.errorText}>{meta.error}</Text>}
+			<Text style={styles.txtError}>{showError && <Text style={styles.errorText}>{meta.error}</Text>}</Text>
 		</View>
 	);
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Pressable, View } from "react-native";
 import { Form, Formik } from 'formik';
+import * as yup from 'yup';
 
 import Text from "./Text";
 import FormikTextInput from './FormikTextInput';
 import theme from '../theme';
-import { flex } from 'synonyms/dictionary';
 
 const styles = StyleSheet.create({
   container: {
@@ -37,23 +37,36 @@ const styles = StyleSheet.create({
   }
 });
 
+const validationSchema = yup.object().shape({
+  username: yup
+    .string()
+    .min(1, "Mininum 1 characters")
+    .max(15, "Maximum 15 characters")
+    .required('Please enter your username'),
+    password: yup
+    .string()
+    .required('Please enter your password') 
+    .min(8, 'Password is too short - should be 8 chars minimum.')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+      "Must Contain 8 Characters, Uppercase, Lowercase, Number and Special Case Character"
+    ),
+});
+
 const Signin = ({onSubmit}) =>{
+  const initialvalues = {
+    username: '',
+    password: '',
+  }
+
 
   return (
     <View style={styles.container}>
     <View>
       <Formik
-        initialValues={{
-          email: '',
-          firstName: '',
-          lastName: '',
-        }}
-        onSubmit={(values, actions) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }, 1000);
-        }}
+        initialValues={initialvalues}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
       >
           <Form>
             <FormikTextInput 
