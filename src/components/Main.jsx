@@ -10,7 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
 import RepositoryList from './RepositoryList';
-import SignIn from './SignIn'
+import Signin from './Signin'
 import AppBar from './AppBar';
 
 const styles = StyleSheet.create({
@@ -27,12 +27,13 @@ const Main = () => {
       <NavigationContainer style={styles.container}>
         <AppBar />
         <Stack.Navigator>
+        <Stack.Screen name="Signin" component={Signin} />
           <Stack.Screen
             name="Home"
             component={RepositoryList}
             options={{ title: 'Repositories' }}
           />
-          <Stack.Screen name="Signin" component={SignIn} />
+          
         </Stack.Navigator>
       </NavigationContainer>
   );
